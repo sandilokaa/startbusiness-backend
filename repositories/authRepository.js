@@ -1,4 +1,4 @@
-const adminModel = require("../models/admin.model");
+const admins = require("../models/admins.model");
 
 class authRepository{
 
@@ -7,7 +7,7 @@ class authRepository{
     
     static async handleGetAdminByEmail({ email }){
 
-        const getAdminByEmail = await adminModel.findOne({
+        const getAdminByEmail = await admins.findOne({
             where: {
                 email: email
             }
@@ -23,13 +23,13 @@ class authRepository{
     
     static async handleRegisterAdmin({ username, email, password }){
 
-        const adminModelInput = new adminModel({
+        const adminsInput = new admins({
             username,
             email,
             password
         });
 
-        const handleRegisteredAdmin = await adminModelInput.save();
+        const handleRegisteredAdmin = await adminsInput.save();
 
         return handleRegisteredAdmin;
     }
