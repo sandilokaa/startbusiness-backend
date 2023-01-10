@@ -4,7 +4,7 @@ const cors = require("cors");
 const mongooseConnect = require("./config/config.db");
 const fileUpload = require("./utils/fileUpload");
 // const path = require("path");
-const PORT = 2000;
+const PORT = process.env.PORT || 2000;
 const app = express();
 
 app.use(express.json());
