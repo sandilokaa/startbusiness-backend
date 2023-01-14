@@ -34,6 +34,19 @@ class productRepository {
     /* ------------------  Handle Get All Products ------------------ */
 
 
+    /* ------------------  Handle Get Product By Id ------------------ */
+
+    static async handleGetProductById({ id }){
+
+        const getProductById = await products.findById(id);
+
+        return getProductById;
+
+    };
+
+    /* ------------------  End Handle Get Product By Id ------------------ */
+
+
     /* ------------------ Handle Create Product ------------------ */
 
     static async handleCreateProduct({ adminId, name, price, category, description, picture }) {
