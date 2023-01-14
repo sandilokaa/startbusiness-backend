@@ -47,6 +47,7 @@ app.post('/api/v1/admin/login', authController.handleLoginAdmin);
 /* ------------------------- Products ------------------------- */
 
 app.get('/api/v1/products', productController.handleGetAllProducts);
+app.get('/api/v1/products/:id', productController.handleGetProductById);
 app.post('/api/v1/products', middlewares.authenticate, fileUpload.single("image"), productController.handleCreateProduct);
 
 /* ------------------------- End Products ------------------------- */
