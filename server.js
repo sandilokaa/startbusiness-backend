@@ -30,6 +30,7 @@ const middlewares = require("./middlewares/auth");
 
 const authController = require("./controllers/authController");
 const productController = require("./controllers/productController");
+const suggestionController = require("./controllers/suggestionController");
 
 /* ================================= End Import Controllers ================================= */
 
@@ -51,6 +52,13 @@ app.get('/api/v1/products/:id', productController.handleGetProductById);
 app.post('/api/v1/products', middlewares.authenticate, fileUpload.single("image"), productController.handleCreateProduct);
 
 /* ------------------------- End Products ------------------------- */
+
+
+/* ------------------------- Suggestions ------------------------- */
+
+app.post('/api/v1/suggestions', suggestionController.handleCreateSuggestions);
+
+/* ------------------------- End Suggestions ------------------------- */
 
 /* ================================= End Define API ================================= */
 
