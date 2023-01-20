@@ -7,7 +7,8 @@ const connectionParams = {
 };
 
 
-const URI = `mongodb://mongo:IyjoGtRdEiWzS34kvw8C@containers-us-west-147.railway.app:7563`;
+// const URI = `mongodb://mongo:IyjoGtRdEiWzS34kvw8C@containers-us-west-147.railway.app:7563`;
+const URI = `mongodb://localhost:27017/startbusiness-app`;
 
 const mongooseConnect = mongoose.connect(
     URI,
