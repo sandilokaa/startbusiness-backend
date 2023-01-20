@@ -72,7 +72,7 @@ class productService {
 
     /* ------------------ Handle Create Product ------------------ */
 
-    static async handleCreateProduct({ adminId, name, price, category, description, picture }) {
+    static async handleCreateProduct({ adminId, name, price, category, description, attention, picture }) {
 
         try {
 
@@ -121,6 +121,17 @@ class productService {
                     }
                 }
             }
+            
+            if (!attention) {
+                return {
+                    status: false,
+                    status_code: 400,
+                    message: "Attention must be filled!",
+                    data: {
+                        handleCreateProduct: null
+                    }
+                }
+            }
 
             /* ------------------ End Payload Validation ------------------ */
 
@@ -139,6 +150,7 @@ class productService {
                 price,
                 category,
                 description,
+                attention,
                 picture: pictures
             });
 

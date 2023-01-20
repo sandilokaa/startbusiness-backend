@@ -49,7 +49,7 @@ class productRepository {
 
     /* ------------------ Handle Create Product ------------------ */
 
-    static async handleCreateProduct({ adminId, name, price, category, description, picture }) {
+    static async handleCreateProduct({ adminId, name, price, category, description, attention, picture }) {
     
         const productsInput = new products({
             adminId, 
@@ -57,6 +57,7 @@ class productRepository {
             price, 
             category, 
             description, 
+            attention,
             picture
         });
 

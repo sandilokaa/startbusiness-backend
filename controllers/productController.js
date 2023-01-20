@@ -48,7 +48,7 @@ const handleGetProductById = async(req, res) => {
 
 const handleCreateProduct = async(req, res) => {
 
-    const { name, price, category, description }= req.body;
+    const { name, price, category, description, attention }= req.body;
 
     const adminId = req.admin._id;
 
@@ -58,6 +58,7 @@ const handleCreateProduct = async(req, res) => {
         price, 
         category,
         description,
+        attention,
         picture: req.file
     });
 
